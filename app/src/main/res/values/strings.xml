@@ -1,0 +1,5 @@
+<resources>
+    <string name="app_name">Coin Base Pro Portfolio</string>
+    <string name="tradable">Tradable</string>
+    <string name="not_tradable">Not Tradable</string>
+</resources>
