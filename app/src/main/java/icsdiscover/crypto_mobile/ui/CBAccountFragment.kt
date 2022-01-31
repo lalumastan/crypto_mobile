@@ -44,7 +44,7 @@ class CBAccountFragment : Fragment() {
         inflater: LayoutInflater,
         container: ViewGroup?,
         savedInstanceState: Bundle?
-    ): View? {
+    ): View {
 
         _binding = FragmentCbAccountListBinding.inflate(inflater, container, false)
         return binding.root
@@ -67,8 +67,8 @@ class CBAccountFragment : Fragment() {
         val secretKey = SecretKeySpec(secretDecoded, "HmacSHA256")
         sha256_HMAC.init(secretKey)
 
-        var message: String = cbAccessTimestamp + cbAccessType + cbAccessPath
-        var cbAccessSign: String =
+        val message: String = cbAccessTimestamp + cbAccessType + cbAccessPath
+        val cbAccessSign: String =
             Base64.encodeToString(sha256_HMAC.doFinal(message.toByteArray()), Base64.NO_WRAP)
 
         val requestCall = destinationService.accounts(
@@ -87,12 +87,12 @@ class CBAccountFragment : Fragment() {
             ) {
 
                 if (response.isSuccessful) {
-                    var CBAccountList: List<CBAccount>? = response.body()
+                    val CBAccountList: List<CBAccount>? = response.body()
                     if (CBAccountList != null) {
                         recyclerView.layoutManager = GridLayoutManager(context, 2)
                         recyclerView.adapter = CBAccountRecyclerViewAdapter(
                             mainActivity,
-                            CBAccountList.filter { s -> !"0.0000000000000000".equals(s.balance) })
+                            CBAccountList.filter { s -> s.balance.toFloat() > 0.00 })
                     }
                 } else {
                     Toast.makeText(
