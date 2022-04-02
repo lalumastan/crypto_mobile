@@ -22,4 +22,4 @@ J{Create<br/>API<br/>Key} --> A
 </ul>
 
 ### Tutorial
-<a href="http://www.youtube.com/watch?feature=player_embedded&v=8_tJXRVlQ0s " target="_blank"><img src="http://img.youtube.com/vi/8_tJXRVlQ0s /0.jpg" alt="How to Call Coinbase Pro REST API from Android Mobile Application" width="240" height="180" border="10" /></a>
+<a href="http://www.youtube.com/watch?feature=player_embedded&v=8_tJXRVlQ0s" target="_blank"><img src="http://img.youtube.com/vi/8_tJXRVlQ0s/0.jpg" alt="How to Call Coinbase Pro REST API from Android Mobile Application" width="240" height="180" border="10" /></a>
